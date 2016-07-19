@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mai Huong</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		html, body {
+			margin: 0px 0px 0px 0px;
+			padding: 0px 0px 0px 0px;
+			font-family: 'Segoe UI';
+
+		}
+
+		section {
+			display: table-row;			
+		}
+
+		.full-page {
+			background: transparent;			
+			height: 100vh;
+			box-sizing: border-box;
+			margin: 0 300px 0px 300px;			
+		}
+
+		#container {
+			height: 100vh;
+			width: 100vw;							
+		}
+
+		#background {
+			background: pink;
+			position: fixed;
+			z-index: -1;
+			height: 100vh;
+			width: 100vw;	
+		}
+
+		#content {
+			height: 600vh;
+		}
+
+		.question {
+			text-align: center;
+			width: 100%;
+		}
+
+		.answer {								
+		}
+
+		.btn {			
+			background-color: white;
+			padding: 20px 50px 20px 50px;
+			text-align: center !important;
+		}
+
+		input[type="radio"]{			
+			margin: 20px;
+		}
+		span {
+			font-size: 25px;
+			padding: 50px;
+		}
+		h1 {
+			font-size: 30px;
+		}
+		p {
+			font-size: 20px;
+			word-spacing: 5px;
+		}
+		table {
+			width: 100%;
+			margin-top: 100px;
+		}
+		td {
+			width: 10%;			
+			padding: 20px;
+		}
+		.center {
+			width: 80%;
+		}
+		#submit-box {
+			margin: 50px;
+			padding: 50px;
+			text-align: center;
+		}
+		#title {					
+			text-align: center;			
+			font-size: 80px;			
+			margin: 200px;
+		}
+		#header{
+			height: 100vh;
+			width: 100vw;
+			text-align: center;
+			display: table-cell;
+			vertical-align: middle;
+		}
+		#intro-content {
+			margin-top: 100px;
+		}
+		#introduction {
+		height: 100vh;
+		width: 100vw;
+		box-sizing: border-box;
+		padding: 50px 100px 50px 100px;
+		}
+	</style>
+
+	<script src="js/jquery-3.0.0.min.js"></script>
+	<script src="js/makeDatabase.js"></script>
+	<script src="js/custom.js"></script>
+	<script src="js/customjQuery.js"></script>
+
+	<script>
+	$(document).ready(function() {		
+		renderData();	
+		smoothlyScroll();
+		scrollToTop();
+		clickResult();
+		//setInterval(changeBackgroundImg, 3000);	
+	});			
+	</script>
+</head>
+<body>
+	<div id="container" class="full-page-background">
+		<div id="background">
+		</div>
+		
+		<div id="header" class="">
+			<span id="title">ARE YOU SMART?</span>
+			<table width="100vw">
+				<tr>
+					<td width="10%"></td>										
+					<td width="40%"><a href="#introduction" class="btn">Instruction</a></td>	
+					<td width="40%"><a id="try-button" href="#Q1" class="btn">Try now</a></td>	
+					<td width="10%"></td>										
+				</tr>
+			</table>
+		</div>
+
+		<div id="introduction" class="">		
+		<p id="intro-content">This free IQ test contains 5 questions of multiple choices, it shouldn’t take you more than 5 minutes to finish, make sure you’re relaxed before starting. You will be see your score after clicking on the “submit” button at the bottom of the page, however, it’s important to remember that this IQ test or any other similar tests cannot test your real intelligence, so if you get a very low score don’t panic, it might be that you’re just not familiar with these types of questions, also before clicking “submit” make sure all the answers are check.</p>		
+			<table width="100vw">
+				<tr>
+					<td width="30%"></td>					
+					<td width="40%" align="center"><a id="try-button"  href="#Q1" class="btn">Try now</a></td>									
+					<td width="30%"></td>						
+				</tr>
+			</table>
+		<br><br>			
+		<p>Project of ...</p>
+		</div>
+
+		<div id="content" class="full-page">
+ 		</div>
+
+		<div id="Q6" class="full-page">
+		<table id="submit-box">
+			<tr>
+				<td></td>
+				<td class="center"><h1>Click Submit and see the result.</h1></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td class="center"><a id="submit" class="btn" href="#score">Submit</a></td>
+				<td></td>
+			</tr>
+		</table>
+		</div>
+
+		<div id="score" class="full-page">
+		<table id="score-box">
+			<tr>
+				<td></td>
+				<td class="center">
+					<h2>Your Score: </h2> <br> 
+					<h1 id="myScore"></h1> <br>
+					<h3 id="myComment"></h3>
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td width="45%">
+					<span onclick="clickResult();"><a id="replay" href="#header" class="btn">Replay</a></span>				
+				</td>
+				<td width="45%">
+					<a id="exit" class="btn" href="https://www.google.com">Exit</a>
+				</td>
+				<td></td>
+			</tr>
+		</table>
+
+		</div>
+
+		<div id="footer">
+		</div>
+	</div>
+</body>
+</html>

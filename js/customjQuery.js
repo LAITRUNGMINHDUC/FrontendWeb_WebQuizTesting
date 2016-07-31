@@ -24,7 +24,6 @@ function scrollToTop()
 
 function clickResult()
 {	
-	renderResult();
-	renderData();
-	smoothlyScroll();
+	renderResult();	
+	smoothlyScroll();	
 }
